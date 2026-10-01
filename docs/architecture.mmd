@@ -1,0 +1,7 @@
+flowchart LR
+    A[Client] -->|HTTP| B(FastAPI App)
+    B -->|Route| C[MemoryManager]
+    C -->|Store/Retrieve| D[In-Memory Dict]
+    D -->|Data| C
+    C -->|Response| B
+    B -->|JSON| A
